@@ -1,3 +1,5 @@
+import time
+
 # Uses the bundle's VP value as a key to point to its respective price.
 microtx = {
     525:4.99,
@@ -8,15 +10,24 @@ microtx = {
     12000:99.99,
 }
 
-target = int(input("Enter the amount of Valorant Points you want to calculate the cost for: "))
+target = int(input("Enter the amount of Valorant Points (VP) you want to calculate the cost for: "))
+print("\nOptionally, you can specify how much VP you currently have to get a more accurate result.")
+curr = int(input("This will deduct it from your specified amount, leaving blank will default to 0: ") or 0)
+
+if curr > target:
+    print("You already have enough VP, the program will exit in 5 seconds.")
+    time.sleep(5)
+    exit()
+
+target -= curr
 
 print("\nTo get", target, "Valorant Points, you could buy...\n")
 
-print('  --------------------------------------------------------------')
+print('  ----------------------------------------------------------------')
 
 for x in microtx:
     calc = 0
-    counter = 0
+    counter = 0 
     while calc < target:
         calc += x
         counter += 1
@@ -28,5 +39,6 @@ for x in microtx:
     Buying this much would mean {target} VP would cost you £{'%0.2f' % (microtx[x]*diff)}, 
     This would leave you with {(x*counter)-target} VP left over.
     ''')
-    print('  --------------------------------------------------------------')
+    print('  ----------------------------------------------------------------')
+    time.sleep(0.5)
 
