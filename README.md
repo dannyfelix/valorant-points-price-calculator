@@ -8,11 +8,18 @@ Simply run the file from the command line:
 
     py valorant_points_calc.py
 
-After running, you will be prompted to input the amount of VP you want to calculate the cost for:
+After running, you must input the region you want to calculate the pricing for, by typing in any of the following two character codes:
 
-    Enter the amount of Valorant Points you want to calculate the cost for:_
+> **AU**: Australia \
+> **BR**: Brazil \
+> **EU**: Europe \
+> **IN**: India \
+> **MX**: Mexico \
+> **NZ**: New Zealand \
+> **NA**: North America \
+> **UK**: United Kingdom 
 
-After this you are given the option to input your current VP balance to deduct that from your specified target, leaving this blank will default to 0.
+After choosing your region, you will be prompted to input the amount of VP you want to calculate the cost for, followed by the option to input your current VP balance to deduct that from your specified target, leaving this blank will default to 0.
 
  # TODO
 
